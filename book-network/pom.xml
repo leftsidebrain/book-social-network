@@ -8,7 +8,7 @@
 		<version>3.2.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.alibou</groupId>
+	<groupId>leftsidebrain</groupId>
 	<artifactId>book-network</artifactId>
 	<version>1.0.1</version>
 	<name>book-network-api</name>
