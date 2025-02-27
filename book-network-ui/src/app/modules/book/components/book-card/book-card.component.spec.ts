@@ -6,10 +6,12 @@ describe('BookCardComponent', () => {
   let component: BookCardComponent;
   let fixture: ComponentFixture<BookCardComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [BookCardComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BookCardComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(BookCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

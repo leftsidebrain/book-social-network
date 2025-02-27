@@ -1,23 +1,33 @@
 <div
   class="card"
-  style="width: 20rem;"
+  style="width: 18rem"
   [class.border-success]="book.shareable"
   [class.border-warning]="book.archived"
 >
-  <img height="200" [src]="bookCover" class="card-img-top" alt="...">
-  <div class="card-body overflow-scroll">
-    <h5 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-book"></i>&nbsp;{{book.title}}</h5>
-    <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user-check"></i>&nbsp;{{ book.authorName }}</h5>
-    <h6 class="card-subtitle fs-6 text-secondary mb-1"><i class="fas fa-code"></i>&nbsp;{{ book.isbn }}</h6>
-    <h6 class="card-subtitle fs-6 text-secondary"><i class="fas fa-user"></i>&nbsp;{{ book.owner }}</h6>
-    <hr>
-    <p class="card-text">{{book.synopsis}}</p>
+  <img height="250" [src]="bookCover" class="card-img-top" alt="..." style="object-fit: fill"  />
+  <div class="card-body overflow-auto" >
+    <h6 class="card-title fs-6 text-nowrap fw-bold mb-2">
+      <i class="fa-solid fa-book" style="width: 2rem"></i>{{ book.title }}
+    </h6>
+    <h6 class="card-subtitle fs-6 text-secondary mb-2">
+      <i class="fa-solid fa-user-check" style="width: 2rem"></i>{{ book.authorName }}
+    </h6>
+    <h6 class="card-subtitle fs-6 text-secondary mb-2">
+      <i class="fas fa-code" style="width: 2rem"></i>{{ book.isbn }}
+    </h6>
+    <h6 class="card-subtitle fs-6 text-secondary">
+      <i class="fas fa-user" style="width: 2rem"></i>{{ book.owner }}
+    </h6>
+    <hr />
+    <p class="card-text">{{ book.synopsis }}</p>
   </div>
-  <div class="card-footer d-flex gap-2 justify-content-between align-items-center">
+  <div
+    class="card-footer d-flex gap-2 justify-content-between align-items-center"
+  >
     <div class="d-flex gap-2">
       <app-rating [rating]="book.rate || 0"></app-rating>
       <span class="fw-bold" *ngIf="book.rate || 0 > 0">
-        {{book.rate}}
+        {{ book.rate }}
       </span>
     </div>
     <div class="d-flex gap-2" *ngIf="!manage">

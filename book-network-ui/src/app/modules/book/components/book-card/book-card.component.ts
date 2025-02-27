@@ -1,10 +1,14 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {BookResponse} from '../../../../services/models/book-response';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BookResponse } from '../../../../services/models';
+import { CommonModule } from '@angular/common';
+import { RatingComponent } from '../rating/rating.component';
 
 @Component({
   selector: 'app-book-card',
+  standalone: true,
+  imports: [CommonModule, RatingComponent],
   templateUrl: './book-card.component.html',
-  styleUrls: ['./book-card.component.scss']
+  styleUrl: './book-card.component.scss',
 })
 export class BookCardComponent {
   private _book: BookResponse = {};
@@ -13,9 +17,9 @@ export class BookCardComponent {
 
   get bookCover(): string | undefined {
     if (this._book.cover) {
-      return 'data:image/jpg;base64,' + this._book.cover
+      return 'data:image/jpg;base64,' + this._book.cover;
     }
-    return 'https://source.unsplash.com/user/c_v_r/1900x800';
+    return 'https://unsplash.com/photos/a-man-walking-down-a-street-holding-an-umbrella-nAUbonq_v7Q';
   }
 
   get book(): BookResponse {
@@ -27,7 +31,6 @@ export class BookCardComponent {
     this._book = value;
   }
 
-
   get manage(): boolean {
     return this._manage;
   }
@@ -37,12 +40,18 @@ export class BookCardComponent {
     this._manage = value;
   }
 
-  @Output() private share: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
-  @Output() private archive: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
-  @Output() private addToWaitingList: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
-  @Output() private borrow: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
-  @Output() private edit: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
-  @Output() private details: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output() private share: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
+  @Output() private archive: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
+  @Output() private addToWaitingList: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
+  @Output() private borrow: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
+  @Output() private edit: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
+  @Output() private details: EventEmitter<BookResponse> =
+    new EventEmitter<BookResponse>();
 
   onShare() {
     this.share.emit(this._book);

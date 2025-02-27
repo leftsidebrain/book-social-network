@@ -6,10 +6,12 @@ describe('BorrowedBookListComponent', () => {
   let component: BorrowedBookListComponent;
   let fixture: ComponentFixture<BorrowedBookListComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [BorrowedBookListComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BorrowedBookListComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(BorrowedBookListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

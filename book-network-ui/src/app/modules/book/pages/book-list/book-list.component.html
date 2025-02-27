@@ -1,14 +1,14 @@
 <h3>Books list</h3>
 <div
   *ngIf="message"
-  class="alert "
-  [class.alert-danger]="level==='error'"
-  [class.alert-success]="level==='success'"
+  class="alert"
+  [class.alert-danger]="level === 'error'"
+  [class.alert-success]="level === 'success'"
   role="alert"
 >
-  <p>{{message}}</p>
+  <p>{{ message }}</p>
 </div>
-<hr>
+<hr />
 <div class="d-flex justify-content-start gap-2 flex-wrap">
   <app-book-card
     *ngFor="let book of bookResponse.content"
@@ -42,16 +42,14 @@
           <i class="fa-solid fa-angle-left"></i>
         </a>
       </li>
-      <li
-        class="page-item"
-        *ngFor="let pageIndex of pages"
-      >
+      <li class="page-item" *ngFor="let pageIndex of pages">
         <a
           (click)="gotToPage(pageIndex)"
           class="page-link"
           [class.active]="page === pageIndex"
           href="javascript:void(0)"
-        >{{ pageIndex + 1 }}</a>
+          >{{ pageIndex + 1 }}</a
+        >
       </li>
       <li class="page-item">
         <a

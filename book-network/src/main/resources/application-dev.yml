@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/book_social_network
+    url: jdbc:postgresql://localhost:5434/book_social_network
     username: username
     password: password
     driver-class-name: org.postgresql.Driver
@@ -14,20 +14,20 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   mail:
-    host: smtp.gmail.com
-    port: 465
-    username: gmail_account@gmail.com
-    password: gmail_password
+    host: localhost
+    port: 1025
+    username: mail
+    password: mail
     properties:
       mail:
         smtp:
-          auth: true
-          ssl:
-            enable: true
-            trust: "*"
-          starttls:
-            enable: true
-    protocol: smtp
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 5000
+        writetimeout: 5000
 application:
   security:
     jwt:
@@ -39,7 +39,7 @@ application:
     frontend:
       activation-url: http://localhost:4200/activate-account
   file:
-    uploads:
+    upload:
       photos-output-path: ./uploads
 server:
   port: 8088

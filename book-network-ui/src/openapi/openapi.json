@@ -1,17 +1,16 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenApi specification - Alibou",
-    "description": "OpenApi documentation for Spring Security",
-    "termsOfService": "Terms of service",
+    "title": "OpenApi specification",
+    "description": "OpenApi documentation for Spring security",
+    "termsOfService": "Term of service",
     "contact": {
-      "name": "Alibou",
-      "url": "https://aliboucoding.com/course",
-      "email": "contact@aliboucoding.com"
+      "name": "leftsidebrain",
+      "email": "ruddikhai10@gmail.com"
     },
     "license": {
-      "name": "Licence name",
-      "url": "https://some-url.com"
+      "name": "Me",
+      "url": "http//licence.com"
     },
     "version": "1.0"
   },
@@ -21,7 +20,7 @@
       "description": "Local ENV"
     },
     {
-      "url": "https://aliboucoding.com/course",
+      "url": "https://example.com",
       "description": "PROD ENV"
     }
   ],
@@ -33,10 +32,8 @@
   "paths": {
     "/feedbacks": {
       "post": {
-        "tags": [
-          "Feedback"
-        ],
-        "operationId": "saveFeedback",
+        "tags": ["Feedback"],
+        "operationId": "saveFeedBack",
         "requestBody": {
           "content": {
             "application/json": {
@@ -64,9 +61,7 @@
     },
     "/books": {
       "get": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "findAllBooks",
         "parameters": [
           {
@@ -104,9 +99,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "saveBook",
         "requestBody": {
           "content": {
@@ -135,9 +128,7 @@
     },
     "/books/cover/{book-id}": {
       "post": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "uploadBookCoverPicture",
         "parameters": [
           {
@@ -154,9 +145,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "required": [
-                  "file"
-                ],
+                "required": ["file"],
                 "type": "object",
                 "properties": {
                   "file": {
@@ -184,9 +173,7 @@
     },
     "/books/borrow/{book-id}": {
       "post": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "borrowBook",
         "parameters": [
           {
@@ -216,9 +203,7 @@
     },
     "/auth/register": {
       "post": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "operationId": "register",
         "requestBody": {
           "content": {
@@ -246,9 +231,7 @@
     },
     "/auth/authenticate": {
       "post": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "operationId": "authenticate",
         "requestBody": {
           "content": {
@@ -276,9 +259,7 @@
     },
     "/books/shareable/{book-id}": {
       "patch": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "updateShareableStatus",
         "parameters": [
           {
@@ -308,9 +289,7 @@
     },
     "/books/borrow/return/{book-id}": {
       "patch": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "returnBorrowBook",
         "parameters": [
           {
@@ -340,9 +319,7 @@
     },
     "/books/borrow/return/approve/{book-id}": {
       "patch": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "approveReturnBorrowBook",
         "parameters": [
           {
@@ -372,9 +349,7 @@
     },
     "/books/archived/{book-id}": {
       "patch": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "updateArchivedStatus",
         "parameters": [
           {
@@ -404,10 +379,8 @@
     },
     "/feedbacks/book/{book-id}": {
       "get": {
-        "tags": [
-          "Feedback"
-        ],
-        "operationId": "findAllFeedbacksByBook",
+        "tags": ["Feedback"],
+        "operationId": "findAllFeedbackByBook",
         "parameters": [
           {
             "name": "book-id",
@@ -435,7 +408,7 @@
             "schema": {
               "type": "integer",
               "format": "int32",
-              "default": 10
+              "default": 0
             }
           }
         ],
@@ -455,9 +428,7 @@
     },
     "/books/{book-id}": {
       "get": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "findBookById",
         "parameters": [
           {
@@ -486,9 +457,7 @@
     },
     "/books/returned": {
       "get": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "findAllReturnedBooks",
         "parameters": [
           {
@@ -528,10 +497,8 @@
     },
     "/books/owner": {
       "get": {
-        "tags": [
-          "Book"
-        ],
-        "operationId": "findAllBooksByOwner",
+        "tags": ["Book"],
+        "operationId": "findBooksByOwner",
         "parameters": [
           {
             "name": "page",
@@ -570,9 +537,7 @@
     },
     "/books/borrowed": {
       "get": {
-        "tags": [
-          "Book"
-        ],
+        "tags": ["Book"],
         "operationId": "findAllBorrowedBooks",
         "parameters": [
           {
@@ -612,9 +577,7 @@
     },
     "/auth/activate-account": {
       "get": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "operationId": "confirm",
         "parameters": [
           {
@@ -637,14 +600,11 @@
   "components": {
     "schemas": {
       "FeedbackRequest": {
-        "required": [
-          "bookId",
-          "comment"
-        ],
+        "required": ["bookId", "comment"],
         "type": "object",
         "properties": {
           "note": {
-            "maximum": 5,
+            "maximum": 0,
             "minimum": 0,
             "type": "number",
             "format": "double"
@@ -659,12 +619,7 @@
         }
       },
       "BookRequest": {
-        "required": [
-          "authorName",
-          "isbn",
-          "synopsis",
-          "title"
-        ],
+        "required": ["authorName", "isbn", "synopsis", "title"],
         "type": "object",
         "properties": {
           "id": {
@@ -689,12 +644,7 @@
         }
       },
       "RegistrationRequest": {
-        "required": [
-          "email",
-          "firstname",
-          "lastname",
-          "password"
-        ],
+        "required": ["email", "firstname", "lastname", "password"],
         "type": "object",
         "properties": {
           "firstname": {
@@ -714,10 +664,7 @@
         }
       },
       "AuthenticationRequest": {
-        "required": [
-          "email",
-          "password"
-        ],
+        "required": ["email", "password"],
         "type": "object",
         "properties": {
           "email": {
@@ -748,7 +695,7 @@
           "comment": {
             "type": "string"
           },
-          "ownFeedback": {
+          "ownFeedBack": {
             "type": "boolean"
           }
         }
@@ -770,7 +717,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalElements": {
+          "totalElement": {
             "type": "integer",
             "format": "int64"
           },
@@ -844,7 +791,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalElements": {
+          "totalElement": {
             "type": "integer",
             "format": "int64"
           },
@@ -905,7 +852,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalElements": {
+          "totalElement": {
             "type": "integer",
             "format": "int64"
           },
@@ -925,7 +872,7 @@
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
-        "description": "JWT auth description",
+        "description": "JWT auth desc",
         "in": "header",
         "scheme": "bearer",
         "bearerFormat": "JWT"

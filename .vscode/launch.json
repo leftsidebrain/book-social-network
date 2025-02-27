@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "BookNetworkApiApplication",
+      "request": "launch",
+      "mainClass": "leftsidebrain.book.BookNetworkApiApplication",
+      "projectName": "book-network-social"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-BookNetworkApiApplication<book-network>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "leftsidebrain.book.BookNetworkApiApplication",
+      "projectName": "book-network",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
